@@ -13,6 +13,11 @@ The geometry is axi-symmetric in nature so only one half of the part is simulate
 <br><br><img src="images/Extrusion/Extru5.JPG" height=700 width=500><br><br><img src="images/Extrusion/Extru6.JPG" width=500 height=700><br><br>
 Figure 5: Dies with different inclination angle w.r.t. horizontal with their corresponding extrusion load curve w.r.t. displacement of the upper die.
 ## Seamless Pipe:
+<br><br><img src="image/seamlesspipe/pipe.png" width=500 height=500><br><br>
+Figure 6: Seemless Pipe
+<br><br><img src="image/seamlesspipe/Billet.png" width=500 height=500><br><br>
+Figure 7: Billet
+
 Seamless (Steel Pipe) is made from a solid round steel billet which is heated and pushed or pulled over a form until the steel is shaped into a hollow tube. The seamless pipe is then finished to dimensional and wall thickness specifications in sizes from 1/8 inch to 26 inch. 
 
 ## Uses:-
