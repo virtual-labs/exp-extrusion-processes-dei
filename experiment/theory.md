@@ -13,7 +13,7 @@ The geometry is axi-symmetric in nature so only one half of the part is simulate
 <br><br><img src="images/Extrusion/Extru5.JPG" height=700 width=500><br><br><img src="images/Extrusion/Extru6.JPG" width=500 height=700><br><br>
 Figure 5: Dies with different inclination angle w.r.t. horizontal with their corresponding extrusion load curve w.r.t. displacement of the upper die.
 ## Seamless Pipe:
-<br><br><img src="image/seamless pipe/pipe.png" width=500 height=500><br><br>
+<br><br><img src="image/seamless pipe/Pipe.png" width=500 height=500><br><br>
 Figure 6: Seemless Pipe
 <br><br><img src="image/seamless pipe/Billet.png" width=500 height=500><br><br>
 Figure 7: Billet
