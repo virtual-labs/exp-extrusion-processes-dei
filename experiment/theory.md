@@ -22,15 +22,12 @@ Seamless (Steel Pipe) is made from a solid round steel billet which is heated an
 
 ## Uses:-
 
-1.Domestic water systems.
-2.Pipelines transporting gas or liquid over long distances.
-3.Scaffolding
-4.Structural steel
-5.As components in mechanical systems such as:
-  - Rollers in conveyor belts
-  - Compactors (E.g.: steam rollers)
-  - Bearing casing
-6.The petroleum industry:
-  - Oil well casing
-  - Oil refinery equipment
+</span><br/><br/>1. Domestic water systems.<br/>2. Pipelines transporting gas or liquid over long distances.<br/>
+3. Scaffolding<br/>4. Structural steel<br/>5. As components in mechanical systems such as:<br/>
+&nbsp;&nbsp;- Rollers in conveyor belts<br/> 
+&nbsp;&nbsp;- Compactors (E.g.: steam rollers)<br/>
+&nbsp;&nbsp;- Bearing casing<br/>
+6. The petroleum industry:<br/>
+&nbsp;&nbsp;- Oil well casing<br/>
+&nbsp;&nbsp;- Oil refinery equipment<br/><br/>
    
