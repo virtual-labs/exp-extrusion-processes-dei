@@ -1,3 +1,121 @@
-{
-  "quiz_html": "<h1> Pre-test : Extrusion </h1>\n\n<form id=\"quizForm\">\n\n<!-- Q1 -->\n<p><b>Q1. Which country has maximum contribution in worldwide forging industry?</b></p>\n<label><input type=\"radio\" name=\"q1\" value=\"China\"> China</label><br>\n<label><input type=\"radio\" name=\"q1\" value=\"USA, Canada\"> USA, Canada</label><br>\n<label><input type=\"radio\" name=\"q1\" value=\"Europe\"> Europe</label><br>\n<label><input type=\"radio\" name=\"q1\" value=\"India\"> India</label>\n<hr>\n\n<!-- Q2 -->\n<p><b>Q2. The types of extrusion process involved in metal forming are:</b></p>\n<label><input type=\"radio\" name=\"q2\" value=\"3\"> 3</label><br>\n<label><input type=\"radio\" name=\"q2\" value=\"4\"> 4</label><br>\n<label><input type=\"radio\" name=\"q2\" value=\"1\"> 1</label><br>\n<label><input type=\"radio\" name=\"q2\" value=\"5\"> 5</label>\n<hr>\n\n<!-- Q3 -->\n<p><b>Q3. Parameter which separates cold forming from hot forming is:</b></p>\n<label><input type=\"radio\" name=\"q3\" value=\"Re-crystallisation temperature\"> Re-crystallisation temperature</label><br>\n<label><input type=\"radio\" name=\"q3\" value=\"Melting point\"> Melting point</label><br>\n<label><input type=\"radio\" name=\"q3\" value=\"Physical\"> Physical properties</label><br>\n<label><input type=\"radio\" name=\"q3\" value=\"Surface\"> Surface properties</label>\n<hr>\n\n<!-- Q4 -->\n<p><b>Q4. How many types of presses are shown in extrusion module?</b></p>\n<label><input type=\"radio\" name=\"q4\" value=\"3\"> 3</label><br>\n<label><input type=\"radio\" name=\"q4\" value=\"10\"> 10</label><br>\n<label><input type=\"radio\" name=\"q4\" value=\"1\"> 1</label><br>\n<label><input type=\"radio\" name=\"q4\" value=\"5\"> 5</label>\n<hr>\n\n<!-- Q5 -->\n<p><b>Q5. The force acting on the workpiece during extrusion is:</b></p>\n<label><input type=\"radio\" name=\"q5\" value=\"Compressive Force\"> Compressive Force</label><br>\n<label><input type=\"radio\" name=\"q5\" value=\"Shear Force\"> Shear Force</label><br>\n<label><input type=\"radio\" name=\"q5\" value=\"Tensile Force\"> Tensile Force</label><br>\n<label><input type=\"radio\" name=\"q5\" value=\"Spring Back Force\"> Spring Back Force</label>\n<hr>\n\n<!-- Q6 -->\n<p><b>Q6. Velocity of ram used in aluminium extrusion simulation:</b></p>\n<label><input type=\"radio\" name=\"q6\" value=\"1 mm/sec & 5 mm/sec\"> 1 mm/sec & 5 mm/sec</label><br>\n<label><input type=\"radio\" name=\"q6\" value=\"2 mm/sec & 3 mm/sec\"> 2 mm/sec & 3 mm/sec</label><br>\n<label><input type=\"radio\" name=\"q6\" value=\"5 mm/sec & 7 mm/sec\"> 5 mm/sec & 7 mm/sec</label><br>\n<label><input type=\"radio\" name=\"q6\" value=\"4 mm/sec & 5 mm/sec\"> 4 mm/sec & 5 mm/sec</label>\n<hr>\n\n<!-- Q7 -->\n<p><b>Q7. Die angles used in aluminium extrusion simulation:</b></p>\n<label><input type=\"radio\" name=\"q7\" value=\"45,60,90\"> 45°, 60°, 90°</label><br>\n<label><input type=\"radio\" name=\"q7\" value=\"10,45,60\"> 10°, 45°, 60°</label><br>\n<label><input type=\"radio\" name=\"q7\" value=\"20,40,60\"> 20°, 40°, 60°</label><br>\n<label><input type=\"radio\" name=\"q7\" value=\"10,20,30\"> 10°, 20°, 30°</label>\n<hr>\n\n<!-- Q8 -->\n<p><b>Q8. Metal extrusion is generally used to produce:</b></p>\n<label><input type=\"radio\" name=\"q8\" value=\"Both\"> Both</label><br>\n<label><input type=\"radio\" name=\"q8\" value=\"Solid\"> Uniform solid section</label><br>\n<label><input type=\"radio\" name=\"q8\" value=\"Hollow\"> Uniform hollow section</label><br>\n<label><input type=\"radio\" name=\"q8\" value=\"None\"> None</label>\n<hr>\n\n<!-- Q9 -->\n<p><b>Q9. For successive extrusion, the metal should be:</b></p>\n<label><input type=\"radio\" name=\"q9\" value=\"Ductile\"> Ductile</label><br>\n<label><input type=\"radio\" name=\"q9\" value=\"Malleable\"> Malleable</label><br>\n<label><input type=\"radio\" name=\"q9\" value=\"Plastic\"> Plastic</label><br>\n<label><input type=\"radio\" name=\"q9\" value=\"Tough\"> Tough</label>\n<hr>\n\n<!-- Q10 -->\n<p><b>Q10. The extrusion chamber, die and ram are lubricated by:</b></p>\n<label><input type=\"radio\" name=\"q10\" value=\"Solid lubricant\"> Solid lubricant</label><br>\n<label><input type=\"radio\" name=\"q10\" value=\"Grease\"> Grease</label><br>\n<label><input type=\"radio\" name=\"q10\" value=\"Vegetable\"> Vegetable</label><br>\n<label><input type=\"radio\" name=\"q10\" value=\"Kerosene oil\"> Kerosene oil</label>\n<hr><br>\n\n<button type=\"button\" onclick=\"checkQuiz()\" style=\"padding:10px 20px; font-size:16px;\">Submit Quiz</button>\n\n</form>\n\n<h2 id=\"result\"></h2>\n\n<script>\nfunction checkQuiz() {\n    const correctAnswers = {\n        q1: \"China\",\n        q2: \"3\",\n        q3: \"Re-crystallisation temperature\",\n        q4: \"3\",\n        q5: \"Compressive Force\",\n        q6: \"1 mm/sec & 5 mm/sec\",\n        q7: \"45,60,90\",\n        q8: \"Both\",\n        q9: \"Ductile\",\n        q10: \"Solid lubricant\"\n    };\n\n    let score = 0;\n    let total = Object.keys(correctAnswers).length;\n\n    for (let key in correctAnswers) {\n        let userAns = document.querySelector(`input[name=\"${key}\"]:checked`);\n        if (userAns && userAns.value === correctAnswers[key]) {\n            score++;\n        }\n    }\n\n    let accuracy = ((score / total) * 100).toFixed(2);\n\n    document.getElementById(\"result\").innerHTML =\n        `<b>Your Score: ${score}/${total}</b><br>Accuracy: <b>${accuracy}%</b>`;\n}\n</script>"
+<h1> Pretest: Extrusion </h1>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<p><b>Q1. Which country has maximum contribution in worldwide forging industry?</b></p>
+<label><input type="radio" name="q1" value="China"> China</label><br>
+<label><input type="radio" name="q1" value="USA, Canada"> USA, Canada</label><br>
+<label><input type="radio" name="q1" value="Europe"> Europe</label><br>
+<label><input type="radio" name="q1" value="India"> India</label>
+<hr>
+
+<!-- Q2 -->
+<p><b>Q2. The types of extrusion process involved in metal forming are:</b></p>
+<label><input type="radio" name="q2" value="3"> 3</label><br>
+<label><input type="radio" name="q2" value="4"> 4</label><br>
+<label><input type="radio" name="q2" value="1"> 1</label><br>
+<label><input type="radio" name="q2" value="5"> 5</label>
+<hr>
+
+<!-- Q3 -->
+<p><b>Q3. Parameter which separates cold forming from hot forming is:</b></p>
+<label><input type="radio" name="q3" value="Re-crystallisation temperature"> Re-crystallisation temperature</label><br>
+<label><input type="radio" name="q3" value="Melting point"> Melting point</label><br>
+<label><input type="radio" name="q3" value="Physical"> Physical properties</label><br>
+<label><input type="radio" name="q3" value="Surface"> Surface properties</label>
+<hr>
+
+<!-- Q4 -->
+<p><b>Q4. How many types of presses are shown in extrusion module?</b></p>
+<label><input type="radio" name="q4" value="3"> 3</label><br>
+<label><input type="radio" name="q4" value="10"> 10</label><br>
+<label><input type="radio" name="q4" value="1"> 1</label><br>
+<label><input type="radio" name="q4" value="5"> 5</label>
+<hr>
+
+<!-- Q5 -->
+<p><b>Q5. The force acting on the workpiece during extrusion is:</b></p>
+<label><input type="radio" name="q5" value="Compressive Force"> Compressive Force</label><br>
+<label><input type="radio" name="q5" value="Shear Force"> Shear Force</label><br>
+<label><input type="radio" name="q5" value="Tensile Force"> Tensile Force</label><br>
+<label><input type="radio" name="q5" value="Spring Back Force"> Spring Back Force</label>
+<hr>
+
+<!-- Q6 -->
+<p><b>Q6. Velocity of ram used in aluminium extrusion simulation:</b></p>
+<label><input type="radio" name="q6" value="1 mm/sec & 5 mm/sec"> 1 mm/sec & 5 mm/sec</label><br>
+<label><input type="radio" name="q6" value="2 mm/sec & 3 mm/sec"> 2 mm/sec & 3 mm/sec</label><br>
+<label><input type="radio" name="q6" value="5 mm/sec & 7 mm/sec"> 5 mm/sec & 7 mm/sec</label><br>
+<label><input type="radio" name="q6" value="4 mm/sec & 5 mm/sec"> 4 mm/sec & 5 mm/sec</label>
+<hr>
+
+<!-- Q7 -->
+<p><b>Q7. Die angles used in aluminium extrusion simulation:</b></p>
+<label><input type="radio" name="q7" value="45,60,90"> 45°, 60°, 90°</label><br>
+<label><input type="radio" name="q7" value="10,45,60"> 10°, 45°, 60°</label><br>
+<label><input type="radio" name="q7" value="20,40,60"> 20°, 40°, 60°</label><br>
+<label><input type="radio" name="q7" value="10,20,30"> 10°, 20°, 30°</label>
+<hr>
+
+<!-- Q8 -->
+<p><b>Q8. Metal extrusion is generally used to produce:</b></p>
+<label><input type="radio" name="q8" value="Both"> Both</label><br>
+<label><input type="radio" name="q8" value="Solid"> Uniform solid section</label><br>
+<label><input type="radio" name="q8" value="Hollow"> Uniform hollow section</label><br>
+<label><input type="radio" name="q8" value="None"> None</label>
+<hr>
+
+<!-- Q9 -->
+<p><b>Q9. For successive extrusion, the metal should be:</b></p>
+<label><input type="radio" name="q9" value="Ductile"> Ductile</label><br>
+<label><input type="radio" name="q9" value="Malleable"> Malleable</label><br>
+<label><input type="radio" name="q9" value="Plastic"> Plastic</label><br>
+<label><input type="radio" name="q9" value="Tough"> Tough</label>
+<hr>
+
+<!-- Q10 -->
+<p><b>Q10. The extrusion chamber, die and ram are lubricated by:</b></p>
+<label><input type="radio" name="q10" value="Solid lubricant"> Solid lubricant</label><br>
+<label><input type="radio" name="q10" value="Grease"> Grease</label><br>
+<label><input type="radio" name="q10" value="Vegetable"> Vegetable</label><br>
+<label><input type="radio" name="q10" value="Kerosene oil"> Kerosene oil</label>
+<hr><br>
+
+<button type="button" onclick="checkQuiz()" style="padding:10px 20px; font-size:16px;">Submit Quiz</button>
+
+</form>
+
+<h2 id="result"></h2>
+
+<script>
+function checkQuiz() {
+    const correctAnswers = {
+        q1: "China",
+        q2: "3",
+        q3: "Re-crystallisation temperature",
+        q4: "3",
+        q5: "Compressive Force",
+        q6: "1 mm/sec & 5 mm/sec",
+        q7: "45,60,90",
+        q8: "Both",
+        q9: "Ductile",
+        q10: "Solid lubricant"
+    };
+
+    let score = 0;
+    let total = Object.keys(correctAnswers).length;
+
+    for (let key in correctAnswers) {
+        let userAns = document.querySelector(`input[name="${key}"]:checked`);
+        if (userAns && userAns.value === correctAnswers[key]) {
+            score++;
+        }
+    }
+
+    let accuracy = ((score / total) * 100).toFixed(2);
+
+    document.getElementById("result").innerHTML =
+        `<b>Your Score: ${score}/${total}</b><br>Accuracy: <b>${accuracy}%</b>`;
 }
+</script>
