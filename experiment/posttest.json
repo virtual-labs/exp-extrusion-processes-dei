@@ -1,39 +1,145 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+[
+  {
+    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:",
+    "answers": {
+      "a": "F1.png",
+      "b": "F2.png",
+      "c": "F3.png",
+      "d": "F4.png"
     },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+    "explanations": {
+      "a": "Correct. F1 shows the correct geometric relation for calculating length 'l' for the given pipe dimension.",
+      "b": "Incorrect relation.",
+      "c": "Incorrect relation.",
+      "d": "Incorrect relation."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q12. If D1 = 50mm, D2 = 45 mm, L = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?:",
+    "answers": {
+      "a": "211.2 mm",
+      "b": "123 mm",
+      "c": "232 mm",
+      "d": "245 mm"
+    },
+    "explanations": {
+      "a": "Correct. Using volume constancy, the correct projected length is 211.2 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q13. If D1 = 55mm, D2 = 50 mm, L = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?:",
+    "answers": {
+      "a": "157.5 mm",
+      "b": "134 mm",
+      "c": "220 mm",
+      "d": "435 mm"
+    },
+    "explanations": {
+      "a": "Correct. Applying volume constancy gives 157.5 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q14. If D1 = 55mm, D2 = 50 mm, L = 150 mm, r1 = 30 mm, r2 = ?, l = 300 mm:",
+    "answers": {
+      "a": "14.9 mm",
+      "b": "21 mm",
+      "c": "12 mm",
+      "d": "23 mm"
+    },
+    "explanations": {
+      "a": "Correct. Solving for r2 using volume constancy gives approximately 14.9 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:",
+    "answers": {
+      "a": "F5.png",
+      "b": "F6.png",
+      "c": "F7.png",
+      "d": "F8.png"
+    },
+    "explanations": {
+      "a": "Correct formula for relating billet volume to final pipe length.",
+      "b": "Incorrect relation.",
+      "c": "Incorrect relation.",
+      "d": "Incorrect relation."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q16. If D1 = 50 mm, L = 100 mm, d1 = 25 mm, d2 = 20 mm, l = ?:",
+    "answers": {
+      "a": "1111 mm",
+      "b": "1000 mm",
+      "c": "900 mm",
+      "d": "872 mm"
+    },
+    "explanations": {
+      "a": "Correct. Based on volume constancy, final extrusion length is approximately 1111 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q17. If D1 = 40 mm, L = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?:",
+    "answers": {
+      "a": "533 mm",
+      "b": "545 mm",
+      "c": "555 mm",
+      "d": "562 mm"
+    },
+    "explanations": {
+      "a": "Correct. Volume constancy gives approx 533 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+
+  {
+    "question": "Q18. If D1 = 30 mm, L = 100 mm, d1 = 20 mm, d2 = ?, l = 600 mm:",
+    "answers": {
+      "a": "11.5 mm",
+      "b": "7.8 mm",
+      "c": "10 mm",
+      "d": "8 mm"
+    },
+    "explanations": {
+      "a": "Correct. Solving the relation gives approximately 11.5 mm.",
+      "b": "Incorrect.",
+      "c": "Incorrect.",
+      "d": "Incorrect."
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  }
+]
