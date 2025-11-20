@@ -1,11 +1,12 @@
 [
   {
-    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:",
+    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:\n<center><img src=\\\"images/Extrusion/PipeDimension.png\\\" alt=\\\"Pipe Dimension\\\"></center>",
+
     "answers": {
-      "a": "F1.png",
-      "b": "F2.png",
-      "c": "F3.png",
-      "d": "F4.png"
+      "a": "images/Extrusion/F1.png",
+      "b": "images/Extrusion/F2.png",
+      "c": "images/Extrusion/F3.png",
+      "d": "images/Extrusion/F4.png"
     },
     "explanations": {
       "a": "Correct. F1 shows the correct geometric relation for calculating length 'l' for the given pipe dimension.",
@@ -74,10 +75,10 @@
   {
     "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:",
     "answers": {
-      "a": "F5.png",
-      "b": "F6.png",
-      "c": "F7.png",
-      "d": "F8.png"
+      "a": "images/Extrusion/F5.png",
+      "b": "images/Extrusion/F6.png",
+      "c": "images/Extrusion/F7.png",
+      "d": "images/Extrusion/F8.png"
     },
     "explanations": {
       "a": "Correct formula for relating billet volume to final pipe length.",
