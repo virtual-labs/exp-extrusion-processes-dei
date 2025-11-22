@@ -2,7 +2,7 @@
   {
     "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:\n\n![Pipe Dimension](images/Extrusion/PipeDimension.png)",
     "answers": {
-      "a": < img src="images/Extrusion/F1.png",>
+      "a": < img src="images/Extrusion/F1.png">
       "b": "images/Extrusion/F2.png",
       "c": "images/Extrusion/F3.png",
       "d": "images/Extrusion/F4.png"
