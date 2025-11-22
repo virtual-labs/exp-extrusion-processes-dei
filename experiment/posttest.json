@@ -1,21 +1,25 @@
 [
   {
-    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:\n\n![Pipe Dimension](images/Extrusion/PipeDimension.png)",
-    "answers": {
-      "a": <img src="images/Extrusion/F1.png" alt="Solid Billet and Pipe Dimension">
-      "b": <img src="images/Extrusion/F2.png" alt="Solid Billet and Pipe Dimension">
-      "c": <img src="images/Extrusion/F3.png" alt="Solid Billet and Pipe Dimension">
-      "d": <img src="images/Extrusion/F5.png" alt="Solid Billet and Pipe Dimension">
-    },
-    "explanations": {
-      "a": "Correct. F1 shows the correct geometric relation for calculating length 'l' for the given pipe dimension.",
-      "b": "Incorrect relation.",
-      "c": "Incorrect relation.",
-      "d": "Incorrect relation."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
+    {
+  "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:<br><center><img src='images/Extrusion/PipeDimension.png' alt='Pipe Dimension'></center>",
+  
+  "answers": {
+    "a": "<img src='images/Extrusion/F1.png' alt='Option A' style='width:180px;'>",
+    "b": "<img src='images/Extrusion/F2.png' alt='Option B' style='width:180px;'>",
+    "c": "<img src='images/Extrusion/F3.png' alt='Option C' style='width:180px;'>",
+    "d": "<img src='images/Extrusion/F4.png' alt='Option D' style='width:180px;'>"
   },
+
+  "explanations": {
+    "a": "Correct. F1 shows the correct geometric relation for calculating length 'l' for the given pipe dimension.",
+    "b": "Incorrect relation.",
+    "c": "Incorrect relation.",
+    "d": "Incorrect relation."
+  },
+
+  "correctAnswer": "a",
+  "difficulty": "intermediate"
+}
 
   {
     "question": "Q12. If D1 = 50mm, D2 = 45 mm, L = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?:",
