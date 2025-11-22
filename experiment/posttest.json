@@ -76,24 +76,26 @@
   },
 
   {
-    "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:\n\n![Pipe Solid Dimension](images/Extrusion/PipeSolid.png)",
-    "answers": {
-      "a": "images/Extrusion/F5.png",
-      "b": "images/Extrusion/F6.png",
-      "c": "images/Extrusion/F7.png",
-      "d": "images/Extrusion/F8.png"
-    },
-    "explanations": {
-      "a": "Correct formula for relating billet volume to final pipe length.",
-      "b": "Incorrect relation.",
-      "c": "Incorrect relation.",
-      "d": "Incorrect relation."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
+  "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:<br><center><img src='images/Extrusion/PipeSolid.png' alt='Pipe Solid Dimension'></center>",
+
+  "answers": {
+    "a": "<img src='images/Extrusion/F5.png' alt='Option A' style='width:180px;'>",
+    "b": "<img src='images/Extrusion/F6.png' alt='Option B' style='width:180px;'>",
+    "c": "<img src='images/Extrusion/F7.png' alt='Option C' style='width:180px;'>",
+    "d": "<img src='images/Extrusion/F8.png' alt='Option D' style='width:180px;'>"
   },
 
-  {
+  "explanations": {
+    "a": "Correct formula for relating billet volume to final pipe length.",
+    "b": "Incorrect relation.",
+    "c": "Incorrect relation.",
+    "d": "Incorrect relation."
+  },
+
+  "correctAnswer": "a",
+  "difficulty": "intermediate"
+}
+
     "question": "Q16. If D1 = 50 mm, L = 100 mm, d1 = 25 mm, d2 = 20 mm, l = ?:",
     "answers": {
       "a": "1111 mm",
