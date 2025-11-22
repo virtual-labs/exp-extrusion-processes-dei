@@ -1,7 +1,6 @@
 [
   {
-    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:\n<center><img src=\\\"images/Extrusion/PipeDimension.png\\\" alt=\\\"Pipe Dimension\\\"></center>",
-
+    "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:\n\n![Pipe Dimension](images/Extrusion/PipeDimension.png)",
     "answers": {
       "a": "images/Extrusion/F1.png",
       "b": "images/Extrusion/F2.png",
@@ -73,7 +72,7 @@
   },
 
   {
-    "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:",
+    "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:\n\n![Pipe Solid Dimension](images/Extrusion/PipeSolid.png)",
     "answers": {
       "a": "images/Extrusion/F5.png",
       "b": "images/Extrusion/F6.png",
