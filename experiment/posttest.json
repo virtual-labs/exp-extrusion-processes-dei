@@ -1,151 +1,92 @@
-[
-  {
+{
+  "version": 2.0,
+  "questions": [
     {
-  "question": "Q11. Pipe dimensions are shown in figure, relation for 'l' is:<br><center><img src='images/Extrusion/PipeDimension.png' alt='Pipe Dimension'></center>",
-  
-  "answers": {
-    "a": "<img src='images/Extrusion/F1.png' alt='Option A' style='width:180px;'>",
-    "b": "<img src='images/Extrusion/F2.png' alt='Option B' style='width:180px;'>",
-    "c": "<img src='images/Extrusion/F3.png' alt='Option C' style='width:180px;'>",
-    "d": "<img src='images/Extrusion/F4.png' alt='Option D' style='width:180px;'>"
-  },
-
-  "explanations": {
-    "a": "Correct. F1 shows the correct geometric relation for calculating length 'l' for the given pipe dimension.",
-    "b": "Incorrect relation.",
-    "c": "Incorrect relation.",
-    "d": "Incorrect relation."
-  },
-
-  "correctAnswer": "a",
-  "difficulty": "intermediate"
+      "question": "Q1. Which of the following materials can be formed using the orbital forming process?",
+      "answers": {
+        "a": "Brass",
+        "b": "Aluminium",
+        "c": "Steel",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "Brass can be formed using orbital forming.",
+        "b": "Aluminium can be formed using orbital forming.",
+        "c": "Steel can also be formed using orbital forming.",
+        "d": "Correct. Orbital forming works on many materials including brass, aluminium, and steel."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q2. Which of the following are advantages of the orbital forming process?",
+      "answers": {
+        "a": "Smaller press",
+        "b": "Smaller stresses in the dies",
+        "c": "Longer die life",
+        "d": "Reduction of noise and vibration",
+        "e": "All of the above"
+      },
+      "explanations": {
+        "a": "Correct advantage but not the only one.",
+        "b": "Correct advantage but not the only one.",
+        "c": "Correct advantage but not the only one.",
+        "d": "Correct advantage but not the only one.",
+        "e": "Correct. All listed points are advantages of orbital forming."
+      },
+      "correctAnswer": "e",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. Which of the following operations can be performed using the orbital forming process?",
+      "answers": {
+        "a": "Crimping",
+        "b": "Sealing",
+        "c": "Riveting",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "Orbital forming can perform crimping.",
+        "b": "Orbital forming can perform sealing.",
+        "c": "Orbital forming can perform riveting.",
+        "d": "Correct. All listed operations can be done by orbital forming."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. Orbital forming is also known as:",
+      "answers": {
+        "a": "Rotary",
+        "b": "Swing",
+        "c": "Rocking-die forging",
+        "d": "All of these"
+      },
+      "explanations": {
+        "a": "Rotary forming is another name for orbital forming.",
+        "b": "Swing forming is also used as a term for orbital forming.",
+        "c": "Rocking-die forging is another technical name for orbital forming.",
+        "d": "Correct. All names refer to the same process."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q5. Which of the following products is NOT made using the orbital forming process?",
+      "answers": {
+        "a": "Fasteners",
+        "b": "Bevel gear",
+        "c": "Wheels",
+        "d": "Tube"
+      },
+      "explanations": {
+        "a": "Fasteners can be made by orbital forming.",
+        "b": "Bevel gears are NOT made by orbital forming — correct answer.",
+        "c": "Wheels can be made with orbital forming.",
+        "d": "Tubes can be formed in orbital forming."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
 }
-
-  {
-    "question": "Q12. If D1 = 50mm, D2 = 45 mm, L = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?:",
-    "answers": {
-      "a": "211.2 mm",
-      "b": "123 mm",
-      "c": "232 mm",
-      "d": "245 mm"
-    },
-    "explanations": {
-      "a": "Correct. Using volume constancy, the correct projected length is 211.2 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  },
-
-  {
-    "question": "Q13. If D1 = 55mm, D2 = 50 mm, L = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?:",
-    "answers": {
-      "a": "157.5 mm",
-      "b": "134 mm",
-      "c": "220 mm",
-      "d": "435 mm"
-    },
-    "explanations": {
-      "a": "Correct. Applying volume constancy gives 157.5 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  },
-
-  {
-    "question": "Q14. If D1 = 55mm, D2 = 50 mm, L = 150 mm, r1 = 30 mm, r2 = ?, l = 300 mm:",
-    "answers": {
-      "a": "14.9 mm",
-      "b": "21 mm",
-      "c": "12 mm",
-      "d": "23 mm"
-    },
-    "explanations": {
-      "a": "Correct. Solving for r2 using volume constancy gives approximately 14.9 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  },
-
-  {
-  "question": "Q15. Solid billet and pipe dimensions are shown in figure, relation for 'l' is:<br><center><img src='images/Extrusion/PipeSolid.png' alt='Pipe Solid Dimension'></center>",
-
-  "answers": {
-    "a": "<img src='images/Extrusion/F5.png' alt='Option A' style='width:180px;'>",
-    "b": "<img src='images/Extrusion/F6.png' alt='Option B' style='width:180px;'>",
-    "c": "<img src='images/Extrusion/F7.png' alt='Option C' style='width:180px;'>",
-    "d": "<img src='images/Extrusion/F8.png' alt='Option D' style='width:180px;'>"
-  },
-
-  "explanations": {
-    "a": "Correct formula for relating billet volume to final pipe length.",
-    "b": "Incorrect relation.",
-    "c": "Incorrect relation.",
-    "d": "Incorrect relation."
-  },
-
-  "correctAnswer": "a",
-  "difficulty": "intermediate"
-}
-
-    "question": "Q16. If D1 = 50 mm, L = 100 mm, d1 = 25 mm, d2 = 20 mm, l = ?:",
-    "answers": {
-      "a": "1111 mm",
-      "b": "1000 mm",
-      "c": "900 mm",
-      "d": "872 mm"
-    },
-    "explanations": {
-      "a": "Correct. Based on volume constancy, final extrusion length is approximately 1111 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  },
-
-  {
-    "question": "Q17. If D1 = 40 mm, L = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?:",
-    "answers": {
-      "a": "533 mm",
-      "b": "545 mm",
-      "c": "555 mm",
-      "d": "562 mm"
-    },
-    "explanations": {
-      "a": "Correct. Volume constancy gives approx 533 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  },
-
-  {
-    "question": "Q18. If D1 = 30 mm, L = 100 mm, d1 = 20 mm, d2 = ?, l = 600 mm:",
-    "answers": {
-      "a": "11.5 mm",
-      "b": "7.8 mm",
-      "c": "10 mm",
-      "d": "8 mm"
-    },
-    "explanations": {
-      "a": "Correct. Solving the relation gives approximately 11.5 mm.",
-      "b": "Incorrect.",
-      "c": "Incorrect.",
-      "d": "Incorrect."
-    },
-    "correctAnswer": "a",
-    "difficulty": "intermediate"
-  }
-]
