@@ -1,6 +1,4 @@
-
-
-##Procedure for Extrusion Process
+## Procedure for Extrusion Process
 
 ### 1. Preparation of Material
 - Clean the metal billet or plastic granules to remove dust, rust, or moisture.
