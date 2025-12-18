@@ -3,17 +3,27 @@
 ### Extrusion process
 
 <!-- Left and Right aligned videos -->
-<div align="left">
-  <video width="600" height="340" controls>
-    <source src="theory video/Ex_pipe.mp4" type="video/mp4" > </video>
-</div>
-<hr>
-<div align="right">
-  <video width="600" height="340" controls>
-    <source src="theory video/Ex_solid.mp4" type="video/mp4"> </video>
-</div>
-<br>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+  
+  <div style="text-align: left;">
+    <video width="600" controls muted style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd;">
+      <source src="theory_video/Ex_pipe.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p><i>Figure 1: Pipe Extrusion Process Logic</i></p>
+  </div>
 
+  <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+  <div style="text-align: right;">
+    <video width="600" controls muted style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd;">
+      <source src="theory_video/Ex_solid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p><i>Figure 2: Solid Billet Extrusion Mechanics</i></p>
+  </div>
+
+</div>
 
 Hot extrusion is a metal forming process of forcing a heated billet to be reduced in its cross section by forcing it to flow through a shaped die opening under a high pressure. During extrusion metal billet is under compression stress state in all three directions and shear forces. No tensile force is produced, which makes high deformation possible without tearing the metal.
 
