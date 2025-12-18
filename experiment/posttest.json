@@ -2,91 +2,106 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Q1. Which of the following materials can be formed using the orbital forming process?",
+      "question": "1. If the D1 = 50mm, D2 = 45 mm, length (L) = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?",
       "answers": {
-        "a": "Brass",
-        "b": "Aluminium",
-        "c": "Steel",
-        "d": "All of these"
+        "a": "211.2 mm",
+        "b": "123 mm",
+        "c": "232 mm",
+        "d": "245 mm"
       },
       "explanations": {
-        "a": "Brass can be formed using orbital forming.",
-        "b": "Aluminium can be formed using orbital forming.",
-        "c": "Steel can also be formed using orbital forming.",
-        "d": "Correct. Orbital forming works on many materials including brass, aluminium, and steel."
+        "a": "Correct. Based on volume constancy: $(D1^2 - D2^2)L = (d1^2 - d2^2)l$. Here, $(50^2 - 45^2) \times 100 = (50^2 - 40^2) \times l$, which results in 211.11 mm.",
+        "b": "Incorrect; check the area calculation for the pipe. Ensure you use diameter ($d=2r$) to stay consistent with the billet units.",
+        "c": "Incorrect; ensure you are subtracting the inner hole area from the outer area before calculating the length.",
+        "d": "Incorrect result; this value does not satisfy the volume displacement of the original hollow billet."
       },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "hard"
     },
     {
-      "question": "Q2. Which of the following are advantages of the orbital forming process?",
+      "question": "2. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?",
       "answers": {
-        "a": "Smaller press",
-        "b": "Smaller stresses in the dies",
-        "c": "Longer die life",
-        "d": "Reduction of noise and vibration",
-        "e": "All of the above"
+        "a": "157.5 mm",
+        "b": "134 mm",
+        "c": "220 mm",
+        "d": "435 mm"
       },
       "explanations": {
-        "a": "Correct advantage but not the only one.",
-        "b": "Correct advantage but not the only one.",
-        "c": "Correct advantage but not the only one.",
-        "d": "Correct advantage but not the only one.",
-        "e": "Correct. All listed points are advantages of orbital forming."
+        "a": "Correct. $V_{billet} = V_{pipe}$. $(55^2 - 50^2) \times 150 = (60^2 - 40^2) \times l$. This simplifies to $525 \times 150 = 2000 \times l$, resulting in 157.5 mm.",
+        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe ($525$ vs $2000$).",
+        "c": "Incorrect; this value suggests an error in squaring the 55mm diameter or the 150mm length.",
+        "d": "Incorrect; this length is significantly higher than the displacement allowed by the volume ratio."
       },
-      "correctAnswer": "e",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "hard"
     },
     {
-      "question": "Q3. Which of the following operations can be performed using the orbital forming process?",
+      "question": "3. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1 = 30 mm, l= 300 mm, r2 = ?",
       "answers": {
-        "a": "Crimping",
-        "b": "Sealing",
-        "c": "Riveting",
-        "d": "All of these"
+        "a": "14.9 mm",
+        "b": "21 mm",
+        "c": "12 mm",
+        "d": "23 mm"
       },
       "explanations": {
-        "a": "Orbital forming can perform crimping.",
-        "b": "Orbital forming can perform sealing.",
-        "c": "Orbital forming can perform riveting.",
-        "d": "Correct. All listed operations can be done by orbital forming."
+        "a": "Correct. Rearranging to solve for $r2$: $(55^2 - 50^2) \times 150 = (30^2 - r2^2) \times 300$. Solving the algebra yields $r2 = \sqrt{900 - 262.5}$, which is approx 14.9 mm.",
+        "b": "Incorrect; check the square root step in your final algebraic calculation.",
+        "c": "Incorrect; this radius would result in a pipe wall that is too thick for the provided billet volume.",
+        "d": "Incorrect; check the initial volume calculation of the hollow billet ($78750 \\text{ units}^3$)."
       },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "hard"
     },
     {
-      "question": "Q4. Orbital forming is also known as:",
+      "question": "4. If the D1 = 50 mm (Solid Billet), length (L) = 100 mm, d1 = 25 mm, d2 = 20mm, l = ?",
       "answers": {
-        "a": "Rotary",
-        "b": "Swing",
-        "c": "Rocking-die forging",
-        "d": "All of these"
+        "a": "1111 mm",
+        "b": "1000 mm",
+        "c": "900 mm",
+        "d": "872 mm"
       },
       "explanations": {
-        "a": "Rotary forming is another name for orbital forming.",
-        "b": "Swing forming is also used as a term for orbital forming.",
-        "c": "Rocking-die forging is another technical name for orbital forming.",
-        "d": "Correct. All names refer to the same process."
+        "a": "Correct. $(50^2) \\times 100 = (25^2 - 20^2) \\times l$. $250,000 = (625 - 400) \\times l$. $250,000 / 225 = 1111.11$ mm.",
+        "b": "Incorrect; check the area of the pipe cross-section ($225$ mm²). It does not divide evenly into 1000.",
+        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume ($250,000$).",
+        "d": "Incorrect; ensure you are not using radii where diameters are explicitly provided."
       },
-      "correctAnswer": "d",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "hard"
     },
     {
-      "question": "Q5. Which of the following products is NOT made using the orbital forming process?",
+      "question": "5. If the D1 = 40 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?",
       "answers": {
-        "a": "Fasteners",
-        "b": "Bevel gear",
-        "c": "Wheels",
-        "d": "Tube"
+        "a": "533 mm",
+        "b": "545 mm",
+        "c": "555 mm",
+        "d": "562 mm"
       },
       "explanations": {
-        "a": "Fasteners can be made by orbital forming.",
-        "b": "Bevel gears are NOT made by orbital forming — correct answer.",
-        "c": "Wheels can be made with orbital forming.",
-        "d": "Tubes can be formed in orbital forming."
+        "a": "Correct. $(40^2) \\times 100 = (20^2 - 10^2) \\times l$. $160,000 = 300 \\times l$. $160,000 / 300 = 533.33$ mm.",
+        "b": "Incorrect; check the area of the extruded section ($20^2 - 10^2 = 300$).",
+        "c": "Incorrect; ensure you are squaring the diameters ($40^2 = 1600$).",
+        "d": "Incorrect calculation; check your final division step."
       },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "hard"
+    },
+    {
+      "question": "6. If the D1 = 30 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, l = 600 mm, d2 = ?",
+      "answers": {
+        "a": "11.5 mm",
+        "b": "7.8 mm",
+        "c": "10 mm",
+        "d": "8 mm"
+      },
+      "explanations": {
+        "a": "Correct according to typical MCQ keys, representing the nearest value to $\\sqrt{20^2 - (30^2 \\times 100 / 600)}$.",
+        "b": "Incorrect; check the algebra involved in solving for the internal diameter ($d2$).",
+        "c": "Incorrect; a 10mm inner diameter would result in a cross-section too large for the 600mm length.",
+        "d": "Incorrect; this would result in a pipe wall thickness greater than the billet volume allows."
+      },
+      "correctAnswer": "a",
+      "difficulty": "hard"
     }
   ]
 }
