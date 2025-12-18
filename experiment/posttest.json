@@ -10,7 +10,7 @@
         "d": "245 mm"
       },
       "explanations": {
-        "a": "Correct. Based on volume constancy: $(D1^2 - D2^2)L = (d1^2 - d2^2)l$. Here, $(50^2 - 45^2) \times 100 = (50^2 - 40^2) \times l$, which results in 211.11 mm.",
+        "a": "Correct",
         "b": "Incorrect; check the area calculation for the pipe. Ensure you use diameter ($d=2r$) to stay consistent with the billet units.",
         "c": "Incorrect; ensure you are subtracting the inner hole area from the outer area before calculating the length.",
         "d": "Incorrect result; this value does not satisfy the volume displacement of the original hollow billet."
@@ -27,8 +27,8 @@
         "d": "435 mm"
       },
       "explanations": {
-        "a": "Correct. $V_{billet} = V_{pipe}$. $(55^2 - 50^2) \times 150 = (60^2 - 40^2) \times l$. This simplifies to $525 \times 150 = 2000 \times l$, resulting in 157.5 mm.",
-        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe ($525$ vs $2000$).",
+        "a": "Correct",
+        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe .",
         "c": "Incorrect; this value suggests an error in squaring the 55mm diameter or the 150mm length.",
         "d": "Incorrect; this length is significantly higher than the displacement allowed by the volume ratio."
       },
@@ -44,10 +44,10 @@
         "d": "23 mm"
       },
       "explanations": {
-        "a": "Correct. Rearranging to solve for $r2$: $(55^2 - 50^2) \times 150 = (30^2 - r2^2) \times 300$. Solving the algebra yields $r2 = \sqrt{900 - 262.5}$, which is approx 14.9 mm.",
+        "a": "Correct",
         "b": "Incorrect; check the square root step in your final algebraic calculation.",
         "c": "Incorrect; this radius would result in a pipe wall that is too thick for the provided billet volume.",
-        "d": "Incorrect; check the initial volume calculation of the hollow billet ($78750 \\text{ units}^3$)."
+        "d": "Incorrect; check the initial volume calculation of the hollow billet"
       },
       "correctAnswer": "a",
       "difficulty": "hard"
@@ -61,9 +61,9 @@
         "d": "872 mm"
       },
       "explanations": {
-        "a": "Correct. $(50^2) \\times 100 = (25^2 - 20^2) \\times l$. $250,000 = (625 - 400) \\times l$. $250,000 / 225 = 1111.11$ mm.",
-        "b": "Incorrect; check the area of the pipe cross-section ($225$ mm²). It does not divide evenly into 1000.",
-        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume ($250,000$).",
+        "a": "Correct",
+        "b": "Incorrect; check the area of the pipe cross-section. It does not divide evenly into 1000.",
+        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume .",
         "d": "Incorrect; ensure you are not using radii where diameters are explicitly provided."
       },
       "correctAnswer": "a",
@@ -78,9 +78,9 @@
         "d": "562 mm"
       },
       "explanations": {
-        "a": "Correct. $(40^2) \\times 100 = (20^2 - 10^2) \\times l$. $160,000 = 300 \\times l$. $160,000 / 300 = 533.33$ mm.",
-        "b": "Incorrect; check the area of the extruded section ($20^2 - 10^2 = 300$).",
-        "c": "Incorrect; ensure you are squaring the diameters ($40^2 = 1600$).",
+        "a": "Correct",
+        "b": "Incorrect; check the area of the extruded section ",
+        "c": "Incorrect; ensure you are squaring the diameters ",
         "d": "Incorrect calculation; check your final division step."
       },
       "correctAnswer": "a",
@@ -95,8 +95,8 @@
         "d": "8 mm"
       },
       "explanations": {
-        "a": "Correct according to typical MCQ keys, representing the nearest value to $\\sqrt{20^2 - (30^2 \\times 100 / 600)}$.",
-        "b": "Incorrect; check the algebra involved in solving for the internal diameter ($d2$).",
+        "a": "Correct ",
+        "b": "Incorrect; check the algebra involved in solving for the internal diameter .",
         "c": "Incorrect; a 10mm inner diameter would result in a cross-section too large for the 600mm length.",
         "d": "Incorrect; this would result in a pipe wall thickness greater than the billet volume allows."
       },
