@@ -8,8 +8,6 @@
     <source src="theory video/Ex_pipe.mp4" type="video/mp4">
   </video>
 </div>
-<br>
-<hr>
 <div align="right">
   <video width="600" height="340" controls>
     <source src="theory video/Ex_solid.mp4" type="video/mp4">
