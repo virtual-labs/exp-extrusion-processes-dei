@@ -11,7 +11,7 @@
       },
       "explanations": {
         "a": "Correct",
-        "b": "Incorrect; check the area calculation for the pipe. Ensure you use diameter ($d=2r$) to stay consistent with the billet units.",
+        "b": "Incorrect; check the area calculation for the pipe. Ensure you use diameter (d=2r) to stay consistent with the billet units.",
         "c": "Incorrect; ensure you are subtracting the inner hole area from the outer area before calculating the length.",
         "d": "Incorrect result; this value does not satisfy the volume displacement of the original hollow billet."
       },
@@ -28,7 +28,7 @@
       },
       "explanations": {
         "a": "Correct",
-        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe .",
+        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe.",
         "c": "Incorrect; this value suggests an error in squaring the 55mm diameter or the 150mm length.",
         "d": "Incorrect; this length is significantly higher than the displacement allowed by the volume ratio."
       },
@@ -63,7 +63,7 @@
       "explanations": {
         "a": "Correct",
         "b": "Incorrect; check the area of the pipe cross-section. It does not divide evenly into 1000.",
-        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume .",
+        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume.",
         "d": "Incorrect; ensure you are not using radii where diameters are explicitly provided."
       },
       "correctAnswer": "a",
@@ -79,8 +79,8 @@
       },
       "explanations": {
         "a": "Correct",
-        "b": "Incorrect; check the area of the extruded section ",
-        "c": "Incorrect; ensure you are squaring the diameters ",
+        "b": "Incorrect; check the area of the extruded section",
+        "c": "Incorrect; ensure you are squaring the diameters",
         "d": "Incorrect calculation; check your final division step."
       },
       "correctAnswer": "a",
@@ -95,8 +95,8 @@
         "d": "8 mm"
       },
       "explanations": {
-        "a": "Correct ",
-        "b": "Incorrect; check the algebra involved in solving for the internal diameter .",
+        "a": "Correct",
+        "b": "Incorrect; check the algebra involved in solving for the internal diameter.",
         "c": "Incorrect; a 10mm inner diameter would result in a cross-section too large for the 600mm length.",
         "d": "Incorrect; this would result in a pipe wall thickness greater than the billet volume allows."
       },
