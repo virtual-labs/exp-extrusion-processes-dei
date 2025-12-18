@@ -4,7 +4,7 @@
 <b>Discipline | <b>Mechanical Engineering
 :--|:--|
 <b> Lab | <b> Metal Forming Virtual Simulation Lab
-<b> Experiment|     <b> Upsetting Processes
+<b> Experiment|     <b> Extrusion Processes
 
 ### About the Experiment 
 
