@@ -53,15 +53,18 @@ Since the surface of the billet often contains an oxidized skin, this type of fl
 
 <p align="center">
   <img src="images/seamless pipe/Pipe.png" width="400">
+  <br>
+  Figure 6: Seamless Pipe
 </p>
-<center>    **Figure 6:** Seamless Pipe   </center> 
 
 
 
 <p align="center">
   <img src="images/seamless pipe/Billet.png" width="400">
+  <br>
+  Figure 7: Billet  
 </p>
-<center>  **Figure 7:** Billet     </center> 
+
 
 
 
