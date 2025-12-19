@@ -54,14 +54,16 @@ Since the surface of the billet often contains an oxidized skin, this type of fl
 <p align="center">
   <img src="images/seamless pipe/Pipe.png" width="400">
 </p>
+<center>    **Figure 6:** Seamless Pipe   </center> 
 
-**Figure 6:** Seamless Pipe
+
 
 <p align="center">
   <img src="images/seamless pipe/Billet.png" width="400">
 </p>
+<center>  **Figure 7:** Billet     </center> 
 
-**Figure 7:** Billet
+
 
 Seamless (Steel Pipe) is made from a solid round steel billet which is heated and pushed or pulled over a form until the steel is shaped into a hollow tube.
 
