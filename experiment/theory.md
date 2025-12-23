@@ -1,4 +1,4 @@
-# Extrusion process
+
 <table width="100%" border="0">
   <tr>
     <td width="50%" align="left">
