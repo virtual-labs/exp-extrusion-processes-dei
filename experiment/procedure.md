@@ -44,6 +44,6 @@
   - Smooth surface finish
 - Look for defects such as cracks, bubbles, or rough marks.
 
-## 10. Cleaning the Machine
+### 10. Cleaning the Machine
 - Remove leftover material from the chamber, barrel, and die.
 - Clean the machine and prepare it for the next extrusion cycle.
