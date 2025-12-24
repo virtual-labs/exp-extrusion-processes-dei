@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Lab - Dayalbagh Educational Institute</title>
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles to match the original Lab feel */
@@ -18,7 +17,6 @@
 </head>
 <body class="min-h-screen flex flex-col font-sans">
 
-    <!-- Header-->
     <div class="lab-header p-4 shadow-md">
         <div class="max-w-5xl mx-auto text-right">
             <h1 class="text-2xl font-bold lab-title">Virtual Lab - Dayalbagh Educational Institute</h1>
@@ -26,7 +24,6 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="flex-grow flex items-center justify-center p-6 bg-cover bg-center" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
         <div class="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-2xl w-full max-w-5xl border border-gray-200">
             
@@ -36,10 +33,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Left Column: Controls -->
                 <form id="simForm" class="space-y-6">
                     
-                    <!-- Extrusion Type -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Extrusion Type</h3>
                         <div class="space-x-4">
@@ -54,7 +49,6 @@
                         </div>
                     </div>
 
-                    <!-- Die Angle -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Die Angle</h3>
                         <div class="space-x-4">
@@ -64,7 +58,6 @@
                         </div>
                     </div>
 
-                    <!-- Curvature -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Die Curvature</h3>
                         <div class="space-x-4">
@@ -73,7 +66,6 @@
                         </div>
                     </div>
 
-                    <!-- Friction -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Coefficient of Friction</h3>
                         <div class="space-x-4">
@@ -83,7 +75,6 @@
                         </div>
                     </div>
 
-                    <!-- Speed -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Ram Velocity</h3>
                         <div class="space-x-4">
@@ -92,7 +83,6 @@
                         </div>
                     </div>
 
-                    <!-- Temperature -->
                     <div class="flex items-center justify-between border-b pb-2">
                         <h3 class="text-lg font-semibold text-gray-700">Temperature</h3>
                         <div class="space-x-4">
@@ -101,18 +91,15 @@
                         </div>
                     </div>
 
-                    <!-- Actions -->
                     <div class="flex gap-4 justify-center pt-4">
                         <button type="submit" class="btn-submit px-8 py-2 rounded-lg font-bold shadow-lg transform hover:scale-105 transition">Submit</button>
                         <button type="reset" class="bg-gray-500 text-white px-8 py-2 rounded-lg font-bold hover:bg-gray-600 shadow-lg transform hover:scale-105 transition" onclick="document.getElementById('resultArea').classList.add('hidden')">Reset</button>
                     </div>
                 </form>
 
-                <!-- Right Column: Results & Video -->
                 <div id="resultArea" class="hidden flex flex-col justify-start bg-gray-50 p-4 rounded-lg border border-gray-300">
                     <h3 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-pink-500 inline-block">Simulation Result</h3>
                     
-                    <!-- Video Player -->
                     <div class="w-full aspect-video bg-black rounded-lg overflow-hidden shadow-lg mb-4 relative">
                         <video id="simVideo" class="w-full h-full" controls>
                             <source src="" type="video/mp4">
@@ -120,7 +107,6 @@
                         </video>
                     </div>
 
-                    <!-- Description Text -->
                     <div class="bg-white p-4 rounded border border-gray-200 shadow-inner h-64 overflow-y-auto">
                         <h4 class="font-bold text-gray-700 mb-1">Observation:</h4>
                         <p id="simText" class="text-gray-600 text-sm leading-relaxed text-justify"></p>
@@ -131,8 +117,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="bg-gray-800 text-white text-center p-3 text-sm">
+
+<div class="bg-gray-800 text-white text-center p-3 text-sm">
         &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
     </div>
 
@@ -272,6 +258,795 @@
 
             // Set Text
             descText.innerHTML = generateDescription(params);
+            
+            // Scroll to results
+            resultArea.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab - Dayalbagh Educational Institute</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f0f0; }
+        .lab-header { background: linear-gradient(to bottom, #ffffff, #e6e6e6); border-bottom: 2px solid #8A1134; }
+        .lab-title { color: #8A1134; font-family: Georgia, serif; }
+        .btn-submit { background-color: #8A1134; color: white; transition: background 0.3s; }
+        .btn-submit:hover { background-color: #6d0d29; }
+        .highlight-text { color: #8A1134; font-weight: bold; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+    <!-- Header -->
+   
+    <!-- Main Content -->
+    <div class="flex-grow flex items-center justify-center p-6 bg-cover bg-center" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
+        <div class="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-2xl w-full max-w-5xl border border-gray-200">
+            <h2 class="text-3xl text-center mb-8 lab-title underline decoration-pink-500 underline-offset-8">
+                Interactive Simulation Bench of Extrusion Process for Aluminium
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Column: Controls -->
+                <form id="simForm" class="space-y-6">
+                    <!-- Extrusion Type -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Extrusion Type</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="ext" value="Solid" required> <span class="highlight-text">Solid Shaft</span></label>
+                            <label><input type="radio" name="ext" value="Pipe"> <span class="highlight-text">Pipe</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Die Angle -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Die Angle</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="angle" value="45" required> <span class="highlight-text">45°</span></label>
+                            <label><input type="radio" name="angle" value="60"> <span class="highlight-text">60°</span></label>
+                            <label><input type="radio" name="angle" value="90"> <span class="highlight-text">90°</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Curvature -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Die Curvature</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="radius" value="1" required> <span class="highlight-text">With Curvature</span></label>
+                            <label><input type="radio" name="radius" value="0"> <span class="highlight-text">Without Curvature</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Friction -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Coefficient of Friction</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="fr" value="0" required> <span class="highlight-text">Low</span></label>
+                            <label><input type="radio" name="fr" value="Medium"> <span class="highlight-text">Medium</span></label>
+                            <label><input type="radio" name="fr" value="High"> <span class="highlight-text">High</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Speed -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Ram Velocity</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="speed" value="1" required> <span class="highlight-text">1 mm/sec</span></label>
+                            <label><input type="radio" name="speed" value="5"> <span class="highlight-text">5 mm/sec</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Temperature -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Temperature</h3>
+                        <div class="space-x-4">
+                            <label><input type="radio" name="mw" value="Cold" required> <span class="highlight-text">Cold</span></label>
+                            <label><input type="radio" name="mw" value="Hot"> <span class="highlight-text">Hot</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex gap-4 justify-center pt-4">
+                        <button type="submit" class="btn-submit px-8 py-2 rounded-lg font-bold shadow-lg hover:scale-105 transition">Submit</button>
+                        <button type="reset" class="bg-gray-500 text-white px-8 py-2 rounded-lg font-bold hover:bg-gray-600 shadow-lg hover:scale-105 transition" onclick="document.getElementById('resultArea').classList.add('hidden')">Reset</button>
+                    </div>
+                </form>
+
+                <!-- Right Column: Results & Video -->
+                <div id="resultArea" class="hidden flex flex-col justify-start bg-gray-50 p-4 rounded-lg border border-gray-300">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-pink-500 inline-block">Simulation Result</h3>
+                    
+                    <!-- Video Player -->
+                    <div class="w-full aspect-video bg-black rounded-lg overflow-hidden shadow-lg mb-4 relative">
+                        <video id="simVideo" class="w-full h-full" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <!-- Description Text -->
+                    <div class="bg-white p-4 rounded border border-gray-200 shadow-inner h-64 overflow-y-auto">
+                        <h4 class="font-bold text-gray-700 mb-1">Observation:</h4>
+                        <p id="simText" class="text-gray-600 text-sm leading-relaxed text-justify"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-800 text-white text-center p-3 text-sm">
+        &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
+    </div>
+
+    <script>
+        // 1. Ticker Logic
+        
+
+        // 2. Complete Video Mapping Database (224 entries)
+        const videoMap = {
+            // Format: "ext_angle_radius_fr_speed_mw": {path: "video_path.mp4", desc: "description"}
+            
+            // ===== PIPE - COLD - WITH CURVATURE =====
+            "Pipe_45_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_45_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_45_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r45/EX_AL_45_R5_MAN_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process."
+            },
+
+            "Pipe_60_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_60_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_60_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r60/EX_AL60_R5_MAN_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process."
+            },
+
+            "Pipe_90_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_90_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_90_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_r90/EX_AL90_R5_MAN_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process."
+            },
+
+            // ===== PIPE - COLD - WITHOUT CURVATURE =====
+            "Pipe_45_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 200 tonnes. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature of about 179<sup>o</sup>C generated at varying cross section."
+            },
+            "Pipe_45_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 200 Tonnes. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows Equivalent strain in the billet."
+            },
+            "Pipe_45_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 205 Tonnes. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature of about 1030c generated at varying cross section."
+            },
+            "Pipe_45_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 200 Tonnes. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_45_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 250 Tonnes. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows Equivalent strain in the billet."
+            },
+            "Pipe_45_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_45/EX_PIPE_45_COLD_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during this process is about 250 Tonnes. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature of about 280<sup>o</sup>C generated at varying cross section."
+            },
+
+            "Pipe_60_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_60/EX_PIPE_60_COLD_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+
+            "Pipe_90_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V1_COLD_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V5_COLD_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V1_COLD_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V5_COLD_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V1_COLD_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_pipe_90/AL_PIPE_90_V5_COLD_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+
+            // ===== PIPE - HOT - WITH CURVATURE =====
+            "Pipe_45_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_F0_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_F0_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_FM_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_45_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_FM_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_45_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_FH_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r45/EX_PIPE_AL_45_HOT_R5_MAN_FH_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Pipe_60_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_F0_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_F0_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Pipe_60_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_FM_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_FM_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_60_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_FH_V1.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r60/EX_PIPE_AL_60_HOT_R5_FH_V5.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Pipe_90_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process."
+            },
+            "Pipe_90_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process."
+            },
+            "Pipe_90_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_r90/EX_PIPE_AL_90_HOT_R5_MAN_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process."
+            },
+
+            // ===== PIPE - HOT - WITHOUT CURVATURE =====
+            "Pipe_45_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V1_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V5_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V1_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_45_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V5_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_45_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V1_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_45_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_45/EX_PIPE_AL_45_HOT_V5_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Pipe_60_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V1_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V5_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V1_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V5_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V1_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_60_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_60/EX_PIPE_AL_60_HOT_V5_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Pipe_90_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V1_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Pipe_90_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V5_F0.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Pipe_90_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V1_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Pipe_90_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V5_FM.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V1_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Pipe_90_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_pipe_90/EX_PIPE_AL_90_HOT_V5_FH.mp4",
+                desc: "In this video you can see the hot extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of pipe is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+
+            // ===== SOLID - COLD - WITH CURVATURE =====
+            "Solid_45_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r45/EX_AL_45_R5_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            "Solid_60_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r60/EX_AL_60_R5_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            "Solid_90_1_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_F0_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_1_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_F0_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_1_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_FM_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_1_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_FM_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_1_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_FH_V1.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_1_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_r90/EX_AL_90_R5_FH_V5.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            // ===== SOLID - COLD - WITHOUT CURVATURE =====
+            "Solid_45_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium pipe which comprises of a mandrel in the extrusion die. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_45_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_45/EX_SOLID_45_COLD_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required for extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            "Solid_60_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_60_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_60/EX_SOLID_60_COLD_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            "Solid_90_0_0_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_0_0_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_0_Medium_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_0_Medium_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_0_High_1_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+            "Solid_90_0_High_5_Cold": {
+                path: "EXTRUSION/Al_Extrusion/al_cold_solid_90/EX_SOLID_90_COLD_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is cold extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this cold extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction."
+            },
+
+            // ===== SOLID - HOT - WITHOUT CURVATURE =====
+            "Solid_45_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_45_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_45_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_45_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_45_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+            "Solid_45_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_45/EX_AL_SOLID_45_HOT_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+
+            "Solid_60_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_60_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_60_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_60_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_60_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_60_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_60/EX_SOLID_AL_60_HOT_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Solid_90_0_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_90_0_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_90_0_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_90_0_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_90_0_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 1mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_90_0_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_90/EX_SOLID_AL_90_HOT_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Maximum force required during hot extrusion process is less than cold extrusion process. Ram velocity is set as 5mm per sec. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            // ===== SOLID - HOT - WITH CURVATURE =====
+            "Solid_45_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_45_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_45_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_45_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_45_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_45_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r45/EX_SOLID_AL_45_HOT_R5_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 45<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Solid_60_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_60_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_60_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_60_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_60_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+            "Solid_60_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r60/EX_SOLID_AL_60_HOT_R5_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 60<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+
+            "Solid_90_1_0_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V1_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process."
+            },
+            "Solid_90_1_0_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V5_F0.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is no friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_90_1_Medium_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V1_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process. Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section."
+            },
+            "Solid_90_1_Medium_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V5_FM.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is medium friction during this hot extrusion process."
+            },
+            "Solid_90_1_High_1_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V1_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 1mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            },
+            "Solid_90_1_High_5_Hot": {
+                path: "EXTRUSION/Al_Extrusion/al_hot_solid_r90/EX_SOLID_AL_90_HOT_R5_V5_FH.mp4",
+                desc: "In this video you can see the extrusion process of Aluminium solid shaft with 50% reduction in diameter of the billet. This process is hot extrusion process where different parameters are controlled on the basis of given specifications. Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of solid is increases. Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process."
+            }
+        };
+
+        // 3. Form Handler
+        document.getElementById('simForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect Form Data
+            const fd = new FormData(e.target);
+            const params = {
+                ext: fd.get('ext'),
+                angle: fd.get('angle'),
+                radius: fd.get('radius'),
+                fr: fd.get('fr'),
+                speed: fd.get('speed'),
+                mw: fd.get('mw')
+            };
+
+            // Validate all fields are selected
+            if (!params.ext || !params.angle || !params.radius || !params.fr || !params.speed || !params.mw) {
+                alert('Please select all parameters!');
+                return;
+            }
+
+            // Create lookup key
+            const key = `${params.ext}_${params.angle}_${params.radius}_${params.fr}_${params.speed}_${params.mw}`;
+            
+            // Get video data
+            const videoData = videoMap[key];
+            
+            if (!videoData) {
+                alert('Combination not found! Please try different parameters.');
+                return;
+            }
+
+            // Update UI
+            const resultArea = document.getElementById('resultArea');
+            const videoPlayer = document.getElementById('simVideo');
+            const descText = document.getElementById('simText');
+
+            resultArea.classList.remove('hidden');
+            
+            // Set Video
+            videoPlayer.src = videoData.path;
+            videoPlayer.load();
+            
+            // Set Text
+            descText.innerHTML = videoData.desc;
             
             // Scroll to results
             resultArea.scrollIntoView({ behavior: 'smooth' });
