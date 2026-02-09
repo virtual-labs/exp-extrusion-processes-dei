@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab - Dayalbagh Educational Institute (Titanium)</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f0f0f0; }
+        .lab-header { background: linear-gradient(to bottom, #ffffff, #e6e6e6); border-bottom: 2px solid #8A1134; }
+        .lab-title { color: #8A1134; font-family: Georgia, serif; }
+        .btn-submit { background-color: #8A1134; color: white; transition: background 0.3s; }
+        .btn-submit:hover { background-color: #6d0d29; }
+        .highlight-text { color: #8A1134; font-weight: bold; }
+        .ticker { 
+            height: 20px; 
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(90deg, #8A1134, #6d0d29);
+            color: white;
+            font-weight: bold;
+        }
+        .ticker-content {
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <!-- Header
+    <div class="lab-header p-4 shadow-md">
+        <div class="max-w-5xl mx-auto text-right">
+            <h1 class="text-2xl font-bold lab-title">Virtual Lab - Dayalbagh Educational Institute</h1>
+        </div>
+    </div>-->
+
+    <!-- Ticker 
+    <div class="ticker">
+        <div class="ticker-content">
+            Simulation Bench &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Titanium &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>-->
+
+    <!-- Main Content -->
+    <div class="flex-grow flex items-center justify-center p-6">
+        <div class="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-2xl w-full max-w-5xl border border-gray-200">
+            
+            <h2 class="text-3xl text-center mb-8 lab-title underline decoration-pink-500 underline-offset-8">
+                Interactive Simulation Bench of Extrusion Process for Titanium
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Left Column: Controls -->
+                <form id="simForm" class="space-y-6">
+                    
+                    <!-- Extrusion Type -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Extrusion Type</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="radio" name="ext" value="Solid" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">Solid Shaft</span>
+                            </label>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="radio" name="ext" value="Pipe" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">Pipe</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Die Angle -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Die Angle</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="angle" value="45" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">45&deg;</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="angle" value="60" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">60&deg;</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="angle" value="90" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">90&deg;</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Curvature -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Die Curvature</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="radius" value="1" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">With Curvature</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="radius" value="0" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">Without Curvature</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Friction -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Coefficient of Friction</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="fr" value="0" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">Low</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="fr" value="Medium" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">Medium</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="fr" value="High" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">High</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Speed -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Ram Velocity</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="speed" value="1" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">1 mm/sec</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="speed" value="5" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">5 mm/sec</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Temperature -->
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <h3 class="text-lg font-semibold text-gray-700">Temperature</h3>
+                        <div class="space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="mw" value="Cold" class="form-radio text-pink-600" required>
+                                <span class="ml-2 highlight-text">Cold</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="mw" value="Hot" class="form-radio text-pink-600">
+                                <span class="ml-2 highlight-text">Hot</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex gap-4 justify-center pt-4">
+                        <button type="submit" class="btn-submit px-8 py-2 rounded-lg font-bold shadow-lg transform hover:scale-105 transition">Submit</button>
+                        <button type="reset" class="bg-gray-500 text-white px-8 py-2 rounded-lg font-bold hover:bg-gray-600 shadow-lg transform hover:scale-105 transition" onclick="document.getElementById('resultArea').classList.add('hidden')">Reset</button>
+                    </div>
+                </form>
+
+                <!-- Right Column: Results & Video -->
+                <div id="resultArea" class="hidden flex flex-col justify-start bg-gray-50 p-4 rounded-lg border border-gray-300">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-pink-500 inline-block">Simulation Result</h3>
+                    
+                    <!-- Video Player -->
+                    <div class="w-full aspect-video bg-black rounded-lg overflow-hidden shadow-lg mb-4 relative">
+                        <video id="simVideo" class="w-full h-full" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="loadingSpinner" class="hidden absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+                        </div>
+                    </div>
+
+                    <!-- Description Text -->
+                    <div class="bg-white p-4 rounded border border-gray-200 shadow-inner h-64 overflow-y-auto">
+                        <h4 class="font-bold text-gray-700 mb-1">Observation:</h4>
+                        <p id="simText" class="text-gray-600 text-sm leading-relaxed text-justify"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-800 text-white text-center p-3 text-sm">
+        &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
+    </div>
+
+    <script>
+        // Complete mapping of all PHP cases to video paths
+        const videoMap = {
+            // COLD PIPE WITH CURVATURE (r = 1)
+            "Pipe-45-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_F0_V1.mp4",
+            "Pipe-45-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_F0_V5.mp4",
+            "Pipe-45-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_FM_V1.mp4",
+            "Pipe-45-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_FM_V5.mp4",
+            "Pipe-45-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_FH_V1.mp4",
+            "Pipe-45-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r45/EX_TI_COLD_45_R5_MAN_FH_V5.mp4",
+            
+            "Pipe-60-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_F0_V1.mp4",
+            "Pipe-60-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_F0_V5.mp4",
+            "Pipe-60-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_FM_V1.mp4",
+            "Pipe-60-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_FM_V5.mp4",
+            "Pipe-60-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_FH_V1.mp4",
+            "Pipe-60-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r60/EX_ti_COLD_60_R5_MAN_FH_V5.mp4",
+            
+            "Pipe-90-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_F0_V1.mp4",
+            "Pipe-90-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_F0_V5.mp4",
+            "Pipe-90-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_FM_V1.mp4",
+            "Pipe-90-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_FM_V5.mp4",
+            "Pipe-90-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_FH_V1.mp4",
+            "Pipe-90-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_r90/EX_ti_COLD_90_R5_MAN_FH_V5.mp4",
+            
+            // COLD PIPE WITHOUT CURVATURE (r = 0)
+            "Pipe-45-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V1_F0.mp4",
+            "Pipe-45-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V5_F0.mp4",
+            "Pipe-45-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V1_FM.mp4",
+            "Pipe-45-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V5_FM.mp4",
+            "Pipe-45-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V1_FH.mp4",
+            "Pipe-45-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_45/EX_TI_PIPE_45_COLD_V5_FH.mp4",
+            
+            "Pipe-60-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_V1_F0.mp4",
+            "Pipe-60-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_V5_F0.mp4",
+            "Pipe-60-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_FM_V1.mp4",
+            "Pipe-60-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_V5_FM.mp4",
+            "Pipe-60-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_V1_FH.mp4",
+            "Pipe-60-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_60/EX_TI_PIPE_60_COLD_V5_FH.mp4",
+            
+            "Pipe-90-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V1_F0.mp4",
+            "Pipe-90-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V5_F0.mp4",
+            "Pipe-90-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V1_FM.mp4",
+            "Pipe-90-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V5_FM.mp4",
+            "Pipe-90-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V1_FH.mp4",
+            "Pipe-90-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_pipe_90/EX_TI_PIPE_90_COLD_V5_FH.mp4",
+            
+            // COLD SOLID WITH CURVATURE (r = 1)
+            "Solid-45-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_F0_V1.mp4",
+            "Solid-45-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_F0_V5.mp4",
+            "Solid-45-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_FM_V1.mp4",
+            "Solid-45-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_FM_V5.mp4",
+            "Solid-45-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_FH_V1.mp4",
+            "Solid-45-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r45/EX_SOLID_TI_R45_COLD_FH_V5.mp4",
+            
+            "Solid-60-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_F0_V1.mp4",
+            "Solid-60-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_F0_V5.mp4",
+            "Solid-60-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_FM_V1.mp4",
+            "Solid-60-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_FM_V5.mp4",
+            "Solid-60-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_FH_V1.mp4",
+            "Solid-60-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r60/EX_SOLID_TI_R60_COLD_FH_V5.mp4",
+            
+            "Solid-90-1-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_F0_V1.mp4",
+            "Solid-90-1-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_F0_V5.mp4",
+            "Solid-90-1-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_FM_V1.mp4",
+            "Solid-90-1-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_FM_V5.mp4",
+            "Solid-90-1-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_FH_V1.mp4",
+            "Solid-90-1-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_r90/EX_SOLID_TI_COLD_R90_FH_V5.mp4",
+            
+            // COLD SOLID WITHOUT CURVATURE (r = 0)
+            "Solid-45-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V1_F0.mp4",
+            "Solid-45-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V5_F0.mp4",
+            "Solid-45-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V1_FM.mp4",
+            "Solid-45-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V5_FM.mp4",
+            "Solid-45-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V1_FH.mp4",
+            "Solid-45-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_45/EX_TI_SOLID_45_COLD_V5_FH.mp4",
+            
+            "Solid-60-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V1_F0.mp4",
+            "Solid-60-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V5_F0.mp4",
+            "Solid-60-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V1_FM.mp4",
+            "Solid-60-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V5_FM.mp4",
+            "Solid-60-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V1_FH.mp4",
+            "Solid-60-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_60/EX_TI_SOLID_60_COLD__V5_FH.mp4",
+            
+            "Solid-90-0-0-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V1_F0.mp4",
+            "Solid-90-0-0-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V5_F0.mp4",
+            "Solid-90-0-Medium-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V1_FM.mp4",
+            "Solid-90-0-Medium-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V5_FM.mp4",
+            "Solid-90-0-High-1-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V1_FH.mp4",
+            "Solid-90-0-High-5-Cold": "EXTRUSION/Ti_Extrusion/Ti_cold_solid_90/EX_TI_SOLID_90_COLD_V5_FH.mp4",
+            
+            // HOT PIPE WITHOUT CURVATURE (r = 0)
+            "Pipe-45-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_F0_V1.mp4",
+            "Pipe-45-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_F0_V5.mp4",
+            "Pipe-45-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_FM_V1.mp4",
+            "Pipe-45-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_FM_V5.mp4",
+            "Pipe-45-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_FH_V1.mp4",
+            "Pipe-45-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_45/EX_TI_PIPE_45_HOT_FH_V5.mp4",
+            
+            "Pipe-60-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_F0_V1.mp4",
+            "Pipe-60-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_F0_V5.mp4",
+            "Pipe-60-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_FM_V1.mp4",
+            "Pipe-60-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_FM_V5.mp4",
+            "Pipe-60-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_FH_V1.mp4",
+            "Pipe-60-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_60/EX_TI_PIPE_60_HOT_FH_V5.mp4",
+            
+            "Pipe-90-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_F0_V1.mp4",
+            "Pipe-90-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_F0_V5.mp4",
+            "Pipe-90-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_FM_V1.mp4",
+            "Pipe-90-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_FM_V5.mp4",
+            "Pipe-90-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_FH_V1.mp4",
+            "Pipe-90-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_90/EX_PIPE_TI_90_HOT_FH_V5.mp4",
+            
+            // HOT SOLID WITHOUT CURVATURE (r = 0)
+            "Solid-45-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V1_F0.mp4",
+            "Solid-45-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V5_F0.mp4",
+            "Solid-45-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V1_FM.mp4",
+            "Solid-45-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V5_FM.mp4",
+            "Solid-45-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V1_FH.mp4",
+            "Solid-45-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_45/EX_TI_SOLID_45_HOT_V5_FH.mp4",
+            
+            "Solid-60-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_F0_V1.mp4",
+            "Solid-60-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_F0_V5.mp4",
+            "Solid-60-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_FM_V1.mp4",
+            "Solid-60-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_FM_V5.mp4",
+            "Solid-60-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_FH_V1.mp4",
+            "Solid-60-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_60/EX_SOLID_TI_60_HOT_FH_V5.mp4",
+            
+            "Solid-90-0-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_F0_V1.mp4",
+            "Solid-90-0-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_F0_V5.mp4",
+            "Solid-90-0-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_FM_V1.mp4",
+            "Solid-90-0-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_FM_V5.mp4",
+            "Solid-90-0-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_FH_V1.mp4",
+            "Solid-90-0-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_90/EX_SOLID_TI_90_HOT_FH_V5.mp4",
+            
+            // HOT SOLID WITH CURVATURE (r = 1)
+            "Solid-45-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_F0_V1.mp4",
+            "Solid-45-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_F0_V5.mp4",
+            "Solid-45-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_FM_V1.mp4",
+            "Solid-45-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_FM_V5.mp4",
+            "Solid-45-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_FH_V1.mp4",
+            "Solid-45-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r45/EX_SOLID_TI_R45_HOT_FH_V5.mp4",
+            
+            "Solid-60-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_F0_V1.mp4",
+            "Solid-60-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_F0_V5.mp4",
+            "Solid-60-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_FM_V1.mp4",
+            "Solid-60-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_FM_V5.mp4",
+            "Solid-60-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_FH_V1.mp4",
+            "Solid-60-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r60/EX_SOLID_TI_R60_HOT_FH_V5.mp4",
+            
+            "Solid-90-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_F0_V1.mp4",
+            "Solid-90-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_F0_V5.mp4",
+            "Solid-90-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_FM_V1.mp4",
+            "Solid-90-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_FM_V5.mp4",
+            "Solid-90-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_FH_V1.mp4",
+            "Solid-90-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_solid_r90/EX_SOLID_TI_R90_HOT_FH_V5.mp4",
+            
+            // HOT PIPE WITH CURVATURE (r = 1)
+            "Pipe-45-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_F0_V1.mp4",
+            "Pipe-45-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_F0_V5.mp4",
+            "Pipe-45-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_FM_V1.mp4",
+            "Pipe-45-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_FM_V5.mp4",
+            "Pipe-45-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_FH_V1.mp4",
+            "Pipe-45-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r45/EX_PIPE_TI_R45_HOT_FH_V5.mp4",
+            
+            "Pipe-60-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_F0_V1.mp4",
+            "Pipe-60-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_F0_V5.mp4",
+            "Pipe-60-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_FM_V1.mp4",
+            "Pipe-60-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_FM_V5.mp4",
+            "Pipe-60-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_FH_V1.mp4",
+            "Pipe-60-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r60/EX_PIPE_TI_R60_HOT_FH_V5.mp4",
+            
+            "Pipe-90-1-0-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_F0_V1.mp4",
+            "Pipe-90-1-0-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_F0_V5.mp4",
+            "Pipe-90-1-Medium-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_FM_V1.mp4",
+            "Pipe-90-1-Medium-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_FM_V5.mp4",
+            "Pipe-90-1-High-1-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_FH_V1.mp4",
+            "Pipe-90-1-High-5-Hot": "EXTRUSION/Ti_Extrusion/Ti_hot_pipe_r90/EX_PIPE_TI_R90_HOT_FH_V5.mp4"
+        };
+
+        // Generic description generator
+        function generateDescription(params) {
+            const isHot = params.mw === 'Hot';
+            const isPipe = params.ext === 'Pipe';
+            const fText = params.fr === '0' ? 'no' : params.fr.toLowerCase();
+            const curvature = params.radius === '1' ? 'with the radius of 5mm' : '';
+            
+            let description = `In this video you can see the ${isHot ? 'hot' : 'cold'} extrusion process of Titanium `;
+            
+            if (isPipe) {
+                description += `pipe which comprises of a mandrel in the extrusion die. `;
+            } else {
+                description += `solid shaft with 50% reduction in diameter of the billet. `;
+            }
+            
+            description += `This process is ${isHot ? 'hot' : 'cold'} extrusion process where different parameters are controlled on the basis of given specifications. `;
+            
+            description += `Extrusion forces with respect to pilot height are shown over the graph these Forces are maximum when there is sudden change in area of cross section of the billet. As the pilot height reduces the force required to extrusion of ${params.ext.toLowerCase()} is increases. `;
+            
+            // Special conditions based on PHP logic analysis
+            if (isHot) {
+                description += `Maximum force required during hot extrusion process is less than cold extrusion process. `;
+            } else if (!isHot && isPipe && params.radius === '0') {
+                description += `Maximum force required during cold extrusion process is less than cold extrusion process. `;
+            }
+            
+            description += `Ram velocity is set as ${params.speed}mm per sec ${curvature}. Die angle is specified as ${params.angle}<sup>o</sup> and it is specified that there is ${fText} friction during this ${isHot ? 'hot' : 'cold'} extrusion process. `;
+            
+            // Temperature observation logic (based on PHP patterns)
+            const showTemp = () => {
+                // Cases that should show temperature strip based on PHP logic
+                if (params.fr === '0') return true; // No friction always shows
+                if (params.fr === 'Medium' && !isHot) return true; // Medium friction in cold
+                if (params.fr === 'Medium' && isHot && params.radius === '1') return true; // Hot with curvature
+                if (params.fr === 'High' && isHot && params.radius === '1') return true; // High friction in hot with curvature
+                return false;
+            };
+            
+            if (showTemp()) {
+                description += `Left side coloured strip shows temperature variation in the billet. The red region shows the maximum temperature generated at varying cross section. `;
+            }
+            
+            if (!isPipe) {
+                description += `One fourth of the solid shaft is shown over the screen because this solid shaft is axis symmetric with X and Y direction.`;
+            }
+            
+            return description;
+        }
+
+        // Form submission handler
+        document.getElementById('simForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fd = new FormData(e.target);
+            const params = {
+                ext: fd.get('ext'),
+                angle: fd.get('angle'),
+                radius: fd.get('radius'),
+                fr: fd.get('fr'),
+                speed: fd.get('speed'),
+                mw: fd.get('mw')
+            };
+
+            // Validate all fields are selected
+            for (const key in params) {
+                if (!params[key]) {
+                    alert('Please select all parameters!');
+                    return;
+                }
+            }
+
+            const key = `${params.ext}-${params.angle}-${params.radius}-${params.fr}-${params.speed}-${params.mw}`;
+            
+            console.log('Generated Key:', key);
+            
+            if (videoMap[key]) {
+                const resultArea = document.getElementById('resultArea');
+                const videoPlayer = document.getElementById('simVideo');
+                const descText = document.getElementById('simText');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                
+                // Show loading
+                loadingSpinner.classList.remove('hidden');
+                resultArea.classList.remove('hidden');
+                
+                // Set video source
+                videoPlayer.src = videoMap[key];
+                
+                // Clear previous description
+                descText.innerHTML = '';
+                
+                // Add event listeners for video loading
+                videoPlayer.onloadeddata = function() {
+                    loadingSpinner.classList.add('hidden');
+                    videoPlayer.play();
+                    
+                    // Generate and display description
+                    descText.innerHTML = generateDescription(params);
+                    
+                    // Scroll to result
+                    resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                };
+                
+                videoPlayer.onerror = function() {
+                    loadingSpinner.classList.add('hidden');
+                    descText.innerHTML = `<span class="text-red-600">Error: Could not load video. Please check if the file exists at: ${videoMap[key]}</span>`;
+                };
+                
+                // Load the video
+                videoPlayer.load();
+                
+            } else {
+                alert('Selected combination not found in database. Please try different parameters.');
+            }
+        });
+
+        // Counter simulation (from PHP)
+        function updateCounter() {
+            // Simulate the PHP counter functionality
+            try {
+                // In a real implementation, this would be an API call
+                console.log('Counter updated');
+            } catch (e) {
+                console.log('Counter simulation complete');
+            }
+        }
+
+        // Initialize counter on page load
+        window.addEventListener('load', updateCounter);
+    </script>
+</body>
+</html>

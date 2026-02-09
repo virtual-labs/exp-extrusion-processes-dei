@@ -1,0 +1,184 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Q1. Which country has maximum contribution in worldwide forging industry?",
+      "answers": {
+        "a": "China",
+        "b": "USA, Canada",
+        "c": "Europe",
+        "d": "India"
+      },
+      "explanations": {
+        "a": "Correct. China is the world's largest contributor to forging production due to its massive industrial base.",
+        "b": "Incorrect. USA and Canada contribute significantly but far less than China.",
+        "c": "Incorrect. Europe contributes substantially but not the maximum.",
+        "d": "Incorrect. India contributes notable amounts but not the highest globally."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q2. The types of extrusion process involved in metal forming are:",
+      "answers": {
+        "a": "3",
+        "b": "4",
+        "c": "1",
+        "d": "5"
+      },
+      "explanations": {
+        "a": "Correct. Direct, Indirect, and Hydrostatic extrusion are the core three major extrusion types.",
+        "b": "Incorrect. Four types is not commonly accepted.",
+        "c": "Incorrect. More than one type exists.",
+        "d": "Incorrect. Five types is not standard classification."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q3. Parameter which separates cold forming from hot forming is:",
+      "answers": {
+        "a": "Re-crystallisation temperature",
+        "b": "Melting point",
+        "c": "Physical properties",
+        "d": "Surface properties"
+      },
+      "explanations": {
+        "a": "Correct. Hot and cold working are differentiated by whether the process temperature is above or below the recrystallization temperature.",
+        "b": "Incorrect. Melting point is unrelated to the classification.",
+        "c": "Incorrect. Physical properties change, but they do not define the classification.",
+        "d": "Incorrect. Surface properties do not determine hot or cold working."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q4. How many types of presses are shown in extrusion module?",
+      "answers": {
+        "a": "3",
+        "b": "10",
+        "c": "1",
+        "d": "5"
+      },
+      "explanations": {
+        "a": "Correct. The extrusion module generally demonstrates three types of presses.",
+        "b": "Incorrect. Not that many presses were shown.",
+        "c": "Incorrect. More than one type was discussed.",
+        "d": "Incorrect. Not five."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q5. The force acting on the workpiece during extrusion is:",
+      "answers": {
+        "a": "Compressive Force",
+        "b": "Shear Force",
+        "c": "Tensile Force",
+        "d": "Spring Back Force"
+      },
+      "explanations": {
+        "a": "Correct. Metal is compressed and pushed through a die using large compressive forces.",
+        "b": "Incorrect. Shear occurs but is not the primary force.",
+        "c": "Incorrect. Tensile force is not used in extrusion.",
+        "d": "Incorrect. Spring back is associated with bending."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q6. Velocity of ram used in aluminium extrusion simulation:",
+      "answers": {
+        "a": "1 mm/sec & 5 mm/sec",
+        "b": "2 mm/sec & 3 mm/sec",
+        "c": "5 mm/sec & 7 mm/sec",
+        "d": "4 mm/sec & 5 mm/sec"
+      },
+      "explanations": {
+        "a": "Correct. These ram speeds are used in the simulation model.",
+        "b": "Incorrect.",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q7. Die angles used in aluminium extrusion simulation:",
+      "answers": {
+        "a": "45,60,90",
+        "b": "10,45,60",
+        "c": "20,40,60",
+        "d": "10,20,30"
+      },
+      "explanations": {
+        "a": "Correct. These die angles (45°, 60°, 90°) were used in the simulation.",
+        "b": "Incorrect.",
+        "c": "Incorrect.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q8. Metal extrusion is generally used to produce:",
+      "answers": {
+        "a": "Both",
+        "b": "Uniform solid section",
+        "c": "Uniform hollow section",
+        "d": "None"
+      },
+      "explanations": {
+        "a": "Correct. Extrusion is used to produce both solid and hollow long uniform sections.",
+        "b": "Partially correct. Solids are produced but not exclusively.",
+        "c": "Partially correct. Hollow sections are produced but not exclusively.",
+        "d": "Incorrect."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q9. For successive extrusion, the metal should be:",
+      "answers": {
+        "a": "Ductile",
+        "b": "Malleable",
+        "c": "Plastic",
+        "d": "Tough"
+      },
+      "explanations": {
+        "a": "Correct. Ductility allows metal to sustain deformation through multiple extrusion cycles.",
+        "b": "Incorrect. Malleability relates more to compression and sheet forming.",
+        "c": "Incorrect. 'Plastic' is too general and not the primary requirement.",
+        "d": "Incorrect. Toughness is not the key requirement for extrusion."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+
+    {
+      "question": "Q10. The extrusion chamber, die and ram are lubricated by:",
+      "answers": {
+        "a": "Solid lubricant",
+        "b": "Grease",
+        "c": "Vegetable",
+        "d": "Kerosene oil"
+      },
+      "explanations": {
+        "a": "Correct. Solid lubricants such as graphite are widely used for high-temperature extrusion.",
+        "b": "Incorrect. Grease cannot withstand high extrusion temperatures.",
+        "c": "Incorrect. Vegetable oils degrade quickly at high temperatures.",
+        "d": "Incorrect. Kerosene is not suitable for lubrication in extrusion."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
