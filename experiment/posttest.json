@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "1. If the D1 = 50mm, D2 = 45 mm, length (L) = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?",
+      "question": "Q1. If the D1 = 50mm, D2 = 45 mm, length (L) = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?",
       "answers": {
         "a": "211.2 mm",
         "b": "123 mm",
@@ -19,7 +19,7 @@
       "difficulty": "hard"
     },
     {
-      "question": "2. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?",
+      "question": "Q2. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?",
       "answers": {
         "a": "157.5 mm",
         "b": "134 mm",
@@ -36,7 +36,7 @@
       "difficulty": "hard"
     },
     {
-      "question": "3. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1 = 30 mm, l= 300 mm, r2 = ?",
+      "question": "Q3. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1 = 30 mm, l= 300 mm, r2 = ?",
       "answers": {
         "a": "14.9 mm",
         "b": "21 mm",
@@ -53,7 +53,7 @@
       "difficulty": "hard"
     },
     {
-      "question": "4. If the D1 = 50 mm (Solid Billet), length (L) = 100 mm, d1 = 25 mm, d2 = 20mm, l = ?",
+      "question": "Q4. If the D1 = 50 mm (Solid Billet), length (L) = 100 mm, d1 = 25 mm, d2 = 20mm, l = ?",
       "answers": {
         "a": "1111 mm",
         "b": "1000 mm",
@@ -70,7 +70,7 @@
       "difficulty": "hard"
     },
     {
-      "question": "5. If the D1 = 40 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?",
+      "question": "Q5. If the D1 = 40 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?",
       "answers": {
         "a": "533 mm",
         "b": "545 mm",
@@ -87,7 +87,7 @@
       "difficulty": "hard"
     },
     {
-      "question": "6. If the D1 = 30 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, l = 600 mm, d2 = ?",
+      "question": "Q6. If the D1 = 30 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, l = 600 mm, d2 = ?",
       "answers": {
         "a": "11.5 mm",
         "b": "7.8 mm",
