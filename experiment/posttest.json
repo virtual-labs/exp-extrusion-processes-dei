@@ -3,68 +3,68 @@
   "questions": [
     {
       "number": 1,
-      "question": "In a blanking operation, the piece removed is considered?",
+      "question": "Extrusion is a type of which manufacturing process?",
       "answers": {
-        "a": "Scrap",
-        "b": "The useful part",
-        "c": "Waste material",
-        "d": "None of the above"
+        "a": "Casting",
+        "b": "Forming",
+        "c": "Machining",
+        "d": "Joining"
       },
       "correctAnswer": "b",
       "difficulty": "beginner",
-      "explanation": "In blanking, the removed portion is the required product. The remaining sheet is scrap."
+      "explanation": "Extrusion is a metal forming process where material is forced to flow through a die opening to produce a desired cross-sectional shape."
     },
     {
       "number": 2,
-      "question": "The clearance in a shearing operation is the distance between?",
+      "question": "In direct extrusion, the metal flows?",
       "answers": {
-        "a": "Punch and Stripper",
-        "b": "Punch cutting edge and Die cutting edge",
-        "c": "Die and Stripper",
-        "d": "Upper and Lower Die shoes"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner",
-      "explanation": "Clearance is the gap between the punch cutting edge and the die cutting edge, which affects cut quality and force required."
-    },
-    {
-      "number": 3,
-      "question": "Cutting force is directly proportional to?",
-      "answers": {
-        "a": "Sheet Area",
-        "b": "Sheet Thickness",
-        "c": "Modulus of Elasticity",
-        "d": "Poisson's Ratio"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner",
-      "explanation": "Cutting force depends on perimeter length, sheet thickness, and shear strength. Greater thickness increases cutting force."
-    },
-    {
-      "number": 4,
-      "question": "Which stage comes first in the shearing process?",
-      "answers": {
-        "a": "Fracture",
-        "b": "Plastic Deformation",
-        "c": "Penetration",
-        "d": "Elastic Recovery"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner",
-      "explanation": "In shearing, elastic deformation occurs first, followed by plastic deformation, then fracture."
-    },
-    {
-      "number": 5,
-      "question": "Excessive clearance results in?",
-      "answers": {
-        "a": "Cleaner cuts",
-        "b": "Reduced force",
-        "c": "Formation of burrs",
-        "d": "Tool breakage"
+        "a": "Opposite to ram movement",
+        "b": "Perpendicular to ram movement",
+        "c": "Same direction as ram movement",
+        "d": "In circular motion"
       },
       "correctAnswer": "c",
       "difficulty": "beginner",
-      "explanation": "Too much clearance causes rough edges and burr formation due to improper fracture alignment."
+      "explanation": "In direct (forward) extrusion, the metal flows in the same direction as the ram movement."
+    },
+    {
+      "number": 3,
+      "question": "Which type of extrusion reduces friction between billet and container wall?",
+      "answers": {
+        "a": "Direct Extrusion",
+        "b": "Indirect Extrusion",
+        "c": "Impact Extrusion",
+        "d": "Hydrostatic Extrusion"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "In indirect extrusion, the billet does not move relative to the container wall, which significantly reduces friction."
+    },
+    {
+      "number": 4,
+      "question": "Extrusion ratio is defined as?",
+      "answers": {
+        "a": "Final area / Initial area",
+        "b": "Initial area / Final area",
+        "c": "Length / Diameter",
+        "d": "Force / Area"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "Extrusion ratio is the ratio of the initial billet cross-sectional area to the final extruded product area."
+    },
+    {
+      "number": 5,
+      "question": "Hot extrusion is preferred because?",
+      "answers": {
+        "a": "It increases friction",
+        "b": "It reduces material ductility",
+        "c": "It lowers required force",
+        "d": "It prevents metal flow"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner",
+      "explanation": "Hot extrusion increases ductility and reduces yield strength of the material, thereby lowering the force required."
     }
   ]
 }
