@@ -2,106 +2,69 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Q1. If the D1 = 50mm, D2 = 45 mm, length (L) = 100 mm, r1 = 25 mm, r2 = 20 mm, l = ?",
+      "number": 1,
+      "question": "In a blanking operation, the piece removed is considered?",
       "answers": {
-        "a": "211.2 mm",
-        "b": "123 mm",
-        "c": "232 mm",
-        "d": "245 mm"
+        "a": "Scrap",
+        "b": "The useful part",
+        "c": "Waste material",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the area calculation for the pipe. Ensure you use diameter (d=2r) to stay consistent with the billet units.",
-        "c": "Incorrect; ensure you are subtracting the inner hole area from the outer area before calculating the length.",
-        "d": "Incorrect result; this value does not satisfy the volume displacement of the original hollow billet."
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "In blanking, the removed portion is the required product. The remaining sheet is scrap."
     },
     {
-      "question": "Q2. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1= 30 mm, r2 = 20 mm, l = ?",
+      "number": 2,
+      "question": "The clearance in a shearing operation is the distance between?",
       "answers": {
-        "a": "157.5 mm",
-        "b": "134 mm",
-        "c": "220 mm",
-        "d": "435 mm"
+        "a": "Punch and Stripper",
+        "b": "Punch cutting edge and Die cutting edge",
+        "c": "Die and Stripper",
+        "d": "Upper and Lower Die shoes"
       },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the cross-sectional area of both the billet and the pipe.",
-        "c": "Incorrect; this value suggests an error in squaring the 55mm diameter or the 150mm length.",
-        "d": "Incorrect; this length is significantly higher than the displacement allowed by the volume ratio."
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "Clearance is the gap between the punch cutting edge and the die cutting edge, which affects cut quality and force required."
     },
     {
-      "question": "Q3. If the D1 = 55mm, D2 = 50 mm, length (L) = 150 mm, r1 = 30 mm, l= 300 mm, r2 = ?",
+      "number": 3,
+      "question": "Cutting force is directly proportional to?",
       "answers": {
-        "a": "14.9 mm",
-        "b": "21 mm",
-        "c": "12 mm",
-        "d": "23 mm"
+        "a": "Sheet Area",
+        "b": "Sheet Thickness",
+        "c": "Modulus of Elasticity",
+        "d": "Poisson's Ratio"
       },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the square root step in your final algebraic calculation.",
-        "c": "Incorrect; this radius would result in a pipe wall that is too thick for the provided billet volume.",
-        "d": "Incorrect; check the initial volume calculation of the hollow billet"
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "Cutting force depends on perimeter length, sheet thickness, and shear strength. Greater thickness increases cutting force."
     },
     {
-      "question": "Q4. If the D1 = 50 mm (Solid Billet), length (L) = 100 mm, d1 = 25 mm, d2 = 20mm, l = ?",
+      "number": 4,
+      "question": "Which stage comes first in the shearing process?",
       "answers": {
-        "a": "1111 mm",
-        "b": "1000 mm",
-        "c": "900 mm",
-        "d": "872 mm"
+        "a": "Fracture",
+        "b": "Plastic Deformation",
+        "c": "Penetration",
+        "d": "Elastic Recovery"
       },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the area of the pipe cross-section. It does not divide evenly into 1000.",
-        "c": "Incorrect; this suggests a calculation error in the initial solid billet volume.",
-        "d": "Incorrect; ensure you are not using radii where diameters are explicitly provided."
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
+      "correctAnswer": "b",
+      "difficulty": "beginner",
+      "explanation": "In shearing, elastic deformation occurs first, followed by plastic deformation, then fracture."
     },
     {
-      "question": "Q5. If the D1 = 40 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, d2 = 10 mm, l = ?",
+      "number": 5,
+      "question": "Excessive clearance results in?",
       "answers": {
-        "a": "533 mm",
-        "b": "545 mm",
-        "c": "555 mm",
-        "d": "562 mm"
+        "a": "Cleaner cuts",
+        "b": "Reduced force",
+        "c": "Formation of burrs",
+        "d": "Tool breakage"
       },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the area of the extruded section",
-        "c": "Incorrect; ensure you are squaring the diameters",
-        "d": "Incorrect calculation; check your final division step."
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
-    },
-    {
-      "question": "Q6. If the D1 = 30 mm (Solid Billet), length (L) = 100 mm, d1 = 20 mm, l = 600 mm, d2 = ?",
-      "answers": {
-        "a": "11.5 mm",
-        "b": "7.8 mm",
-        "c": "10 mm",
-        "d": "8 mm"
-      },
-      "explanations": {
-        "a": "Correct",
-        "b": "Incorrect; check the algebra involved in solving for the internal diameter.",
-        "c": "Incorrect; a 10mm inner diameter would result in a cross-section too large for the 600mm length.",
-        "d": "Incorrect; this would result in a pipe wall thickness greater than the billet volume allows."
-      },
-      "correctAnswer": "a",
-      "difficulty": "hard"
+      "correctAnswer": "c",
+      "difficulty": "beginner",
+      "explanation": "Too much clearance causes rough edges and burr formation due to improper fracture alignment."
     }
   ]
 }
